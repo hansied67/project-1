@@ -22,8 +22,13 @@ body {
   color: #f1f1f1;
 }
 
+#current-page {
+  color: #f1f1f1
+}
+
 .main {
   margin-left: 200px;
+  padding: 20px;
 }
 
 @media screen and (max-height: 450px) {
