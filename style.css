@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+}
+
+.side-navigation {
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  background-color: #21252b;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.side-navigation a {
+  padding: 6px;
+  font-size: 25px;
+  color: #818894;
+  display: block;
+}
+
+.side-navigation a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px;
+}
+
+@media screen and (max-height: 450px) {
+  .side-navigation {padding-top: 15px;}
+  .side-navigation a {font-size:18px;}
+}
