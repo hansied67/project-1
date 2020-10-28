@@ -42,8 +42,14 @@ table.image-table {
   margin-right: auto;
   table-layout: fixed;
   width: 50%;
-
 }
+
+table.playlist-selection {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table.playlis-selecion
 
 table img {
   display: block;
@@ -55,7 +61,23 @@ table img.big-table-img {
   width: 90%;
   height: 100%;
 }
+
+.video-wrapper {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.video-wrapper iframe {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+
 @media screen and (max-height: 450px) {
   .side-navigation {padding-top: 15px;}
   .side-navigation a {font-size:18px;}
+  iframe.music-player {
+
+  }
 }
