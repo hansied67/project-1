@@ -11,21 +11,27 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <title>Readme</title>
+  <title>Q4</title>
 </head>
 <body>
   <div class="side-navigation">
-    <div id="current-page">ReadMe</div>
+    <a href="./index.html">ReadMe</a>
     <a href="./Q1.html">Question 1</a>
     <a href="./Q2.html">Question 2</a>
     <a href="./Q3.html">Question 3</a>
-    <a href="./Q4.html">Question 4</a>
+    <div id="current-page">Question 4</div>
     <a href="./Q5.html">Question 5</a>
   </div>
-  <div class="main">
-    <h1>Project 1</h1>
-    <p>Each question has its own page on the left navigation pane.</p>
-    <a href="https://github.com/hansied67/project-1">Source Code</a>
-  </div>
+  <form class="main">
+    <h1>Q4.  Fahrenheit-Celsius Conversion</h1>
+    <div id="temperature-converter">
+      <label class="temperature-header" for="fahrenheit">Fahrenheit</label>
+      <label class="temperature-header" for="celsius">Celsius</label>
+      <input class="temperature-input" id="fahrenheit" oninput="checkInput.call(this)">
+      <div id="equals">=</div>
+      <input class="temperature-input" id="celsius">
+      <button id="convert-button" onclick="convert.call(this);">Convert</button>
+    </div>
+  </form>
 </body>
 </html>

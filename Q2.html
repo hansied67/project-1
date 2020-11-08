@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="./app.js"></script>
 
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -23,14 +24,18 @@
   </div>
   <div class="main">
     <h1>Q2.  A video player simulation</h1>
-    <h2>It's hard to find music you can embed! Since I'm a nerd anyway, here's some video game music.</h2>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PL16278DBB6C316722" frameborder="0" allow="accelerometer; picture-in-picture; encrypted-media" allowfullscreen></iframe>
-    </div>
-    <table class="playlist-selection">
+    <h2 class="center-h2">Copyright-free music here (hopefully)</h2>
+    <table id="playlist-selection">
       <tr>
-        <td>Mother 3 OST</td>
+        <td colspan="5"><iframe name="video-player" src="https://www.youtube.com/embed/YL6dIFkaT9c" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe></td>
+      </tr>
+        <td><a class="selected" onclick="selectVideo.call(this);" href="https://www.youtube.com/embed/YL6dIFkaT9c" target="video-player">Off to the Races!</a></td>
+        <td><a class="unselected" onclick="selectVideo.call(this);" href="https://www.youtube.com/embed/pls6OyJpCWg?start=51&end=65" target="video-player">Daytona USA: Rolling Start</a></td>
+        <td><a class="unselected" onclick="selectVideo.call(this);" href="https://www.youtube.com/embed/0wEIuPU3i2E" target="video-player">Cadence of Hyrule: Deku Village</a></td>
+        <td><a class="unselected" onclick="selectVideo.call(this);" href="https://www.youtube.com/embed/ds9rDSA0Mz4" target="video-player">Dark Souls II: The Pursuer</a></td>
+        <td><a class="unselected" onclick="selectVideo.call(this);" href="https://www.youtube.com/embed/cHlf08yTPiU" target="video-player">Joshua Radin: Winter</a></td>
       </tr>
     </table>
   </div>
 </body>
+</html>
