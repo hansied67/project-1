@@ -22,15 +22,15 @@
     <div id="current-page">Question 4</div>
     <a href="./Q5.html">Question 5</a>
   </div>
-  <form class="main">
+  <div class="main">
     <h1>Q4.  Fahrenheit-Celsius Conversion</h1>
     <div id="temperature-converter">
       <label class="temperature-header" for="fahrenheit">Fahrenheit</label>
       <label class="temperature-header" for="celsius">Celsius</label>
-      <input class="temperature-input" id="fahrenheit" oninput="checkInput.call(this)">
+      <input class="temperature-input" id="fahrenheit" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();">
       <div id="equals">=</div>
-      <input class="temperature-input" id="celsius">
-      <button id="convert-button" onclick="convert.call(this);">Convert</button>
+      <input class="temperature-input" id="celsius" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();">
+      <button id="convert-button" onclick="convert();">Convert</button>
     </div>
   </form>
 </body>
