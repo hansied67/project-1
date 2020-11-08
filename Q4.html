@@ -27,9 +27,9 @@
     <div id="temperature-converter">
       <label class="temperature-header" for="fahrenheit">Fahrenheit</label>
       <label class="temperature-header" for="celsius">Celsius</label>
-      <input class="temperature-input" id="fahrenheit" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();">
+      <input class="temperature-input" id="fahrenheit" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();" autocomplete="off">
       <div id="equals">=</div>
-      <input class="temperature-input" id="celsius" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();">
+      <input class="temperature-input" id="celsius" oninput="checkInput.call(this);" onfocus="focusCheck.call(this);" onkeydown="convertEnter();" autocomplete="off">
       <button id="convert-button" onclick="convert();">Convert</button>
     </div>
   </form>

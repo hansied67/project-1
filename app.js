@@ -31,9 +31,9 @@ class Celsius {
 		constructor(val) {
 				this.val = parseFloat(val);
 				this.type = "celsius";
-				this.suffix = "&deg;C";
+				this.suffix = "ºC";
 				this.conv_val = (this.val * (9 / 5)) + 32;
-				this.conv_suffix = "&deg;F";
+				this.conv_suffix = "ºF";
 
         this.rounding = (this.val % 1 !== 0);
         if (this.rounding) {
@@ -47,6 +47,12 @@ class Celsius {
         this.clean_val = this.val + this.suffix;
         this.clean_conv = this.conv + this.suffix;
 		}
+    get cleanVal() {
+        return this.clean_val;
+    }
+    get cleanConv() {
+        return this.clean_conv;
+    }
 }
 
 
@@ -56,7 +62,6 @@ function selectVideo() {
 }
 
 var last_focused, last_input = "";
-var will_delete = false;
 var valid_regex = new RegExp("^[0-9\-.]*$");
 
 function focusCheck() {
@@ -69,19 +74,9 @@ function focusCheck() {
 }
 
 function checkInput() {
-
-    if (will_delete) {
-        var temp_val = this.value;
-        document.getElementById("fahrenheit").value = "";
-        document.getElementById("celsius").value = "";
-        last_input = "";
-        will_delete = false;
-        return;
-    }
-
     if (valid_regex.test(this.value) === false) {
+        alert("Invalid Input: \"" + this.value + "\".\n Resetting to previous value.");
         this.value = last_input;
-        alert("Invalid Character: \"" + this.value + "\"");
     }
     else {
         last_input = this.value;
@@ -94,27 +89,23 @@ function convert() {
     var cel = document.getElementById("celsius");
     var cur;
 
-    will_delete = true;
-
     if (cel.value === "" && far.value !== "") {
         cur = new Fahrenheit(far.value);
         far.value = cur.cleanVal;
         cel.value = cur.cleanConv;
     }
     else if (far.value === "" && cel.value !== "") {
-        cur = new Celsius(far.value);
+        cur = new Celsius(cel.value);
         cel.value = cur.cleanVal;
         far.value = cur.cleanConv;
     }
     else if (far.value === "" && cel.value === ""){
         alert("You must input something to convert");
-        will_delete = false;
     }
     else {
         document.getElementById("fahrenheit").value = "";
         document.getElementById("celsius").value = "";
         last_input = "";
-        will_delete = false;
     }
     document.activeElement.blur();
 }
