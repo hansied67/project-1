@@ -16,7 +16,7 @@ class Fahrenheit {
         }
 
         this.clean_val = this.val + this.suffix;
-        this.clean_conv = this.conv + this.suffix;
+        this.clean_conv = this.conv + this.conv_suffix;
 		}
     get cleanVal() {
         return this.clean_val;
@@ -45,7 +45,7 @@ class Celsius {
         }
 
         this.clean_val = this.val + this.suffix;
-        this.clean_conv = this.conv + this.suffix;
+        this.clean_conv = this.conv + this.conv_suffix;
 		}
     get cleanVal() {
         return this.clean_val;
@@ -65,6 +65,9 @@ var last_focused, last_input = "";
 var valid_regex = new RegExp("^[0-9\-.]*$");
 
 function focusCheck() {
+    document.getElementById("fahrenheit").style.backgroundColor = "#292C34";
+    document.getElementById("celsius").style.backgroundColor = "#292C34";
+    this.style.backgroundColor = "#FFA9A3";
     if (last_focused !== this.id) {
         last_focused = this.id;
         document.getElementById("fahrenheit").value = "";
@@ -108,6 +111,8 @@ function convert() {
         last_input = "";
     }
     document.activeElement.blur();
+    document.getElementById("fahrenheit").style.backgroundColor = "#2B3A67";
+    document.getElementById("celsius").style.backgroundColor = "#2B3A67";
 }
 
 function convertEnter() {
